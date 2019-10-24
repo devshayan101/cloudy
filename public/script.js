@@ -19,8 +19,6 @@ var myCropWidget = cloudinary.createUploadWidget({
  cloudName: 'shayan-dev', uploadPreset: 'fojw1igo', folder: 'widgetdocs',
  cropping: false,
  searchByRights: true,
- googleApiKey: 'AIzaSyDaQj7FO1IQtp9DSB5YNP5jjG6f_mItEQ4',
-
  //croppingShowDimensions: true,
  sources: ['local', 'camera', 'facebook', 'instagram'],
  maxImageWidth: 500,

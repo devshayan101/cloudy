@@ -22,7 +22,7 @@ app.get("/", function (req, res) {
 
 app.post("/uploads", upload.single("image"), async (req, res) => {
  const result = await cloudinary.v2.uploader.upload(req.file.path);
- res.send(result);
+ res.send(`<p>File uploaded</p><br>${result}`);
 });
 
 const PORT = process.env.PORT || 4000;
