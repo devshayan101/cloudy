@@ -1,23 +1,25 @@
 const express = require("express")
-const ejs = require('ejs')
+//const ejs = require('ejs')
 const cloudinary = require("cloudinary");
 require("dotenv").config();
 require("./handlers/cloudinary");
-// const exphbs = require('express-handlebars');
-// app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-// app.set('view engine', 'handlebars');
+const exphbs = require('express-handlebars');
 
 const app = express();
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.set('view engine', 'handlebars');
+
+
 
 const upload = require("./handlers/multer");
 
 
 
-app.set('view engine', 'ejs');
+//app.set('view engine', 'ejs');
 
 
 app.get("/", function (req, res) {
- res.render('main.ejs')
+ res.render('index')
 })
 
 app.post("/uploads", upload.single("image"), async (req, res) => {
